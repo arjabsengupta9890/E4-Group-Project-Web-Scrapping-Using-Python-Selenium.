@@ -1,0 +1,17 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.keys import Keys
+import time
+
+s = Service("C:/Users/arjab/Downloads/chromedriver_win32 (3).zip")
+driver = webdriver.Chrome(service= s)
+driver.get("https://www.google.com/")
+time.sleep(20)
+fall = driver.find_element_by_xpath("""/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input""")
+time.sleep(2)
+fall.send_keys("the godfather: vito corleone")
+fall.send_keys(Keys.ENTER)
+time.sleep(4)
+driver.find_element_by_xpath("""/html/body/div[6]/div/div[10]/div[3]/div/div/div/div/div[1]/div/div/div[1]/div/div/div/div/div/div[3]/div/div/div/div/div/div[1]/img""").click()
+time.sleep(3)
+driver.save_screenshot("C:\WEB SCRAPPING THROUGH PYTHON PROJECT/VITO.png.PDF")
